@@ -4,11 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./public/logo/articuno.png" type="image/x-icon" sizes="30x30">
     <title>Pokedex</title>
 </head>
 
 <body>
+    <main class="main" id="main">
+        <section class="pokedex" id="pokedex">
+            <!-- 
+            
+             Minha intenção é editar esse arquivo svg 
+             para criar a logica de uma pokedex
 
+            -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 580" width="360" height="580">
+
+                <!-- =============== DEFINIÇÕES =============== -->
+                <defs>
+                    <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#e8f5e9" />
+                        <stop offset="100%" stop-color="#b9f6ca" />
+                    </linearGradient>
+
+                    <linearGradient id="scanLine" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+                        <stop offset="50%" stop-color="rgba(255,255,255,0.35)" />
+                        <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+                    </linearGradient>
+                </defs>
+
+                <!-- =============== CORPO =============== -->
+                <rect x="16" y="16" width="328" height="548" rx="28" fill="#e53935" />
+
+                <!-- =============== HEADER =============== -->
+                <text x="180" y="50" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">
+                    POKÉDEX
+                </text>
+
+                <!-- =============== LED =============== -->
+                <circle id="status-led" cx="64" cy="72" r="14" fill="#00e676">
+                    <animate attributeName="r" values="13;15;13" dur="1.4s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="1;0.5;1" dur="1.4s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- =============== TELA PRINCIPAL =============== -->
+                <rect x="44" y="84" width="272" height="210" rx="16" fill="#0d0d0d" />
+                <rect id="screen-main" x="54" y="94" width="252" height="190" rx="12" fill="url(#screenGlow)" />
+
+                <!-- Scanline RPG -->
+                <rect x="54" y="94" width="252" height="20" fill="url(#scanLine)">
+                    <animate attributeName="y" from="94" to="264" dur="3s" repeatCount="indefinite" />
+                </rect>
+
+                <!-- Sprite -->
+                <rect id="pokemon-sprite" x="110" y="120" width="140" height="120" rx="10" fill="#81c784" />
+
+                <!-- Nome -->
+                <text id="pokemon-name" x="180" y="270" text-anchor="middle" font-size="16" fill="#1b5e20"
+                    font-weight="bold">
+                    NOME
+                </text>
+
+                <!-- =============== PAINEL DE STATUS =============== -->
+                <rect x="44" y="300" width="272" height="150" rx="16" fill="#102027" />
+
+                <!-- ID / Tipo -->
+                <text id="pokemon-id" x="64" y="330" font-size="12" fill="#ffffff">
+                    ID: ---
+                </text>
+                <text id="pokemon-type" x="64" y="348" font-size="12" fill="#ffffff">
+                    Tipo: ---
+                </text>
+
+                <!-- =============== BARRAS RPG =============== -->
+                <!-- HP -->
+                <text x="64" y="372" font-size="11" fill="#e0f2f1">HP</text>
+                <rect x="90" y="364" width="200" height="10" rx="5" fill="#37474f" />
+                <rect id="hp-bar" x="90" y="364" width="120" height="10" rx="5" fill="#4caf50">
+                    <animate attributeName="width" from="0" to="120" dur="0.8s" fill="freeze" />
+                </rect>
+
+                <!-- ATAQUE -->
+                <text x="64" y="392" font-size="11" fill="#e0f2f1">ATK</text>
+                <rect x="90" y="384" width="200" height="10" rx="5" fill="#37474f" />
+                <rect id="attack-bar" x="90" y="384" width="140" height="10" rx="5" fill="#ff7043">
+                    <animate attributeName="width" from="0" to="140" dur="0.8s" fill="freeze" />
+                </rect>
+
+                <!-- DEFESA (mais contraste) -->
+                <text x="64" y="412" font-size="11" fill="#e0f2f1">DEF</text>
+                <rect x="90" y="404" width="200" height="10" rx="5" fill="#37474f" />
+                <rect id="defense-bar" x="90" y="404" width="160" height="10" rx="5" fill="#42a5f5">
+                    <animate attributeName="width" from="0" to="160" dur="0.8s" fill="freeze" />
+                </rect>
+
+                <!-- =============== CONTROLES =============== -->
+                <circle cx="96" cy="500" r="28" fill="#1c1c1c" />
+                <rect x="86" y="484" width="20" height="32" fill="#555" />
+                <rect x="80" y="498" width="32" height="10" fill="#555" />
+
+                <circle cx="244" cy="490" r="14" fill="#111" />
+                <circle cx="274" cy="510" r="14" fill="#111" />
+
+                <text x="244" y="495" font-size="10" fill="#fff" text-anchor="middle">A</text>
+                <text x="274" y="515" font-size="10" fill="#fff" text-anchor="middle">B</text>
+
+            </svg>
+
+        </section>
+    </main>
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
