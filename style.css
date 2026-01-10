@@ -35,10 +35,40 @@
 
 }
 
+html {
+    width: 100%;
+    height: 100%;
+
+    background-image: url("./public/gif/66796dc4ff0ca03f74bd8d9e3fe129b6.gif");
+    background-size: cover;
+    background-position: center;
+
+}
+
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.main .pokedex {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
