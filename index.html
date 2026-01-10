@@ -13,7 +13,7 @@
     <main class="main" id="main">
         <section class="pokedex" id="pokedex">
             <!-- 
-            
+
              Minha intenção é editar esse arquivo svg 
              para criar a logica de uma pokedex
 
@@ -50,7 +50,9 @@
 
                 <!-- =============== TELA PRINCIPAL =============== -->
                 <rect x="44" y="84" width="272" height="210" rx="16" fill="#0d0d0d" />
-                <rect id="screen-main" x="54" y="94" width="252" height="190" rx="12" fill="url(#screenGlow)" />
+                <!-- <rect id="screen-main" x="54" y="94" width="252" height="190" rx="12" fill="url(#screenGlow)" /> -->
+                <image id="screen-bg" href="" x="54" y="94" width="252" height="190"
+                    preserveAspectRatio="xMidYMid meet" />
 
                 <!-- Scanline RPG -->
                 <rect x="54" y="94" width="252" height="20" fill="url(#scanLine)">
@@ -58,12 +60,12 @@
                 </rect>
 
                 <!-- Sprite -->
-                <rect id="pokemon-sprite" x="110" y="120" width="140" height="120" rx="10" fill="#81c784" />
+
 
                 <!-- Nome -->
-                <text id="pokemon-name" x="180" y="270" text-anchor="middle" font-size="16" fill="#1b5e20"
+                <text id="pokemon-name" x="180" y="270" text-anchor="middle" font-size="16" fill="#ffffff"
                     font-weight="bold">
-                    NOME
+                    NAME
                 </text>
 
                 <!-- =============== PAINEL DE STATUS =============== -->
@@ -74,7 +76,7 @@
                     ID: ---
                 </text>
                 <text id="pokemon-type" x="64" y="348" font-size="12" fill="#ffffff">
-                    Tipo: ---
+                    TYPE: ---
                 </text>
 
                 <!-- =============== BARRAS RPG =============== -->
@@ -111,8 +113,8 @@
                 <text x="274" y="515" font-size="10" fill="#fff" text-anchor="middle">B</text>
 
             </svg>
-
         </section>
+
     </main>
 
 
