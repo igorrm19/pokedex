@@ -5,12 +5,14 @@ const idPokemon = document.getElementById("pokemon-id");
 const imagePokemon = document.getElementById("screen-bg");
 const proximo = document.getElementById("proximo");
 const anterior = document.getElementById("anterior");
+const searchInput = document.getElementById("search-input");
+const buttonSearch = document.getElementById("search-button");
 
 
 // Variáveis comuns
 let pokemonId = 0;
 let pokemonAleatorio;
-
+let pokemons;
 
 // Funções
 async function LoadingPokemons() {
@@ -21,7 +23,7 @@ async function LoadingPokemons() {
 
 
 async function nomeAleatorio() {
-    const pokemons = await LoadingPokemons();
+    pokemons = await LoadingPokemons();
     pokemonAleatorio = pokemons[Math.floor(Math.random() * pokemons.length)];
 
     pokemonId = pokemonAleatorio.url.split("/").at(-2);
@@ -65,6 +67,28 @@ window.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" || e.key === "b" || e.key === "B") {
         anteriorId();
     }
+});
+
+
+searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase().trim();
+
+    if (!value) return;
+
+    const foundPokemon = pokemons.find(
+        (pokemon) => pokemon.name === value
+    );
+
+    if (!foundPokemon) return;
+
+    pokemonId = foundPokemon.url.split("/").at(-2);
+
+    nomePokemon.textContent = foundPokemon.name;
+    idPokemon.textContent = `#${pokemonId}`;
+    imagePokemon.setAttribute(
+        "href",
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
+    );
 });
 
 
