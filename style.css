@@ -113,3 +113,21 @@ body {
     width: 60px;
     border: none;
 }
+
+.main .view {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: -80px;
+}
+
+.main .view .ver-todos {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    color: var(--background-color);
+    background-color: var(--button-color);
+    width: 150px;
+    border: none;
+}
