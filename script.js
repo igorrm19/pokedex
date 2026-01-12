@@ -1,5 +1,6 @@
 
 // Variaveis dos elementos
+
 const nomePokemon = document.getElementById("pokemon-name");
 const idPokemon = document.getElementById("pokemon-id");
 const imagePokemon = document.getElementById("screen-bg");
@@ -11,15 +12,22 @@ const animateDef = document.getElementById("animate-defense-bar");
 const animateHp = document.getElementById("animate-hp-bar");
 const animateAttack = document.getElementById("animate-attack-bar");
 const pokemonType = document.getElementById("pokemon-type");
+const buttonVerTodos = document.getElementById("ver-todos");
+const svg = document.querySelector("svg");
+const searchInput2 = document.getElementById("search-input-2");
 
+
+let svgClone;
 
 // Variáveis comuns
+
 let pokemonId = 0;
 let pokemonAleatorio;
 let pokemons;
 
 
 // Funções
+
 async function LoadingPokemons() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
     const data = await response.json();
@@ -78,8 +86,21 @@ async function anteriorId() {
 }
 
 
+
 // Eventos
-console.log(pokemonId);
+// ... (seus event listeners para proximo/anterior/keydown/searchinput) ...
+
+buttonVerTodos.addEventListener("click", () => {
+    // Não precisa de muita alteração aqui, apenas chama a função
+    copiaPokedex();
+});
+
+nomeAleatorio();
+
+
+
+// Eventos
+
 proximo.addEventListener("click", nomeAleatorio);
 anterior.addEventListener("click", anteriorId);
 
@@ -94,6 +115,7 @@ window.addEventListener("keydown", (e) => {
 });
 
 
+// Eventos de busca
 searchInput.addEventListener("input", () => {
     const value = searchInput.value.toLowerCase().trim();
 
@@ -115,6 +137,15 @@ searchInput.addEventListener("input", () => {
     );
 });
 
+
+buttonVerTodos.addEventListener("click", () => {
+    svg.style.display = "none";
+    buttonVerTodos.style.display = "none";
+    searchInput.style.display = "none";
+    searchInput2.style.display = "block";
+
+    copiaPokedex();
+});
 
 
 nomeAleatorio();

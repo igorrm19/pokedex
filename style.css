@@ -98,7 +98,7 @@ body {
 
 .main .sereach form input {
     padding: 10px 25px;
-    width: 200px;
+    width: 300px;
     border-radius: var(--border-radius);
     outline: none;
     margin: 3px;
@@ -110,9 +110,11 @@ body {
     border-radius: var(--border-radius);
     color: var(--background-color);
     background-color: var(--button-color);
-    width: 60px;
+    width: 80px;
     border: none;
 }
+
+
 
 .main .view {
     display: flex;
@@ -130,4 +132,10 @@ body {
     background-color: var(--button-color);
     width: 150px;
     border: none;
+}
+
+@media (min-width: 768px) {
+    .view {
+        margin-top: -70px;
+    }
 }
