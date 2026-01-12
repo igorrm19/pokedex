@@ -7,12 +7,17 @@ const proximo = document.getElementById("proximo");
 const anterior = document.getElementById("anterior");
 const searchInput = document.getElementById("search-input");
 const buttonSearch = document.getElementById("search-button");
+const animateDef = document.getElementById("animate-defense-bar");
+const animateHp = document.getElementById("animate-hp-bar");
+const animateAttack = document.getElementById("animate-attack-bar");
+const pokemonType = document.getElementById("pokemon-type");
 
 
 // Variáveis comuns
 let pokemonId = 0;
 let pokemonAleatorio;
 let pokemons;
+
 
 // Funções
 async function LoadingPokemons() {
@@ -30,10 +35,20 @@ async function nomeAleatorio() {
 
     nomePokemon.textContent = pokemonAleatorio.name;
     idPokemon.textContent = `#${pokemonId}`;
+    const pokemonStats = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    const pokemonStatsResponse = await fetch(pokemonStats);
+    const pokemonStatsData = await pokemonStatsResponse.json();
+    console.log(pokemonStatsData);
+
+
+    animateDef.setAttribute("to", pokemonStatsData.stats[0].base_stat);
+    animateHp.setAttribute("to", pokemonStatsData.stats[1].base_stat);
+    animateAttack.setAttribute("to", pokemonStatsData.stats[2].base_stat);
 
     const imgUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
     imagePokemon.setAttribute("href", imgUrl);
 
+    pokemonType.textContent = pokemonStatsData.types[0].type.name;
 
     console.log(
         "Pokemon:", pokemonAleatorio.name,
@@ -42,15 +57,24 @@ async function nomeAleatorio() {
     );
 }
 
-function anteriorId() {
+async function anteriorId() {
     pokemonId = Number(pokemonId) - 1;
 
     nomePokemon.textContent = pokemonAleatorio.name;
     idPokemon.textContent = `#${pokemonId}`;
+    const pokemonStats = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+    const pokemonStatsResponse = await fetch(pokemonStats);
+    const pokemonStatsData = await pokemonStatsResponse.json();
+
     imagePokemon.setAttribute(
         "href",
         `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`
     );
+
+    animateDef.setAttribute("to", pokemonStatsData.stats[0].base_stat);
+    animateHp.setAttribute("to", pokemonStatsData.stats[1].base_stat);
+    animateAttack.setAttribute("to", pokemonStatsData.stats[2].base_stat);
+    pokemonType.textContent = pokemonStatsData.types[0].type.name;
 }
 
 

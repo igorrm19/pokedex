@@ -97,21 +97,22 @@
                 <text x="64" y="372" font-size="11" fill="#e0f2f1">HP</text>
                 <rect x="90" y="364" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="hp-bar" x="90" y="364" width="120" height="10" rx="5" fill="#4caf50">
-                    <animate attributeName="width" from="0" to="120" dur="0.8s" fill="freeze" />
+                    <animate id="animate-hp-bar" attributeName="width" from="0" to="120" dur="0.8s" fill="freeze" />
                 </rect>
 
                 <!-- ATAQUE -->
                 <text x="64" y="392" font-size="11" fill="#e0f2f1">ATK</text>
                 <rect x="90" y="384" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="attack-bar" x="90" y="384" width="140" height="10" rx="5" fill="#ff7043">
-                    <animate attributeName="width" from="0" to="140" dur="0.8s" fill="freeze" />
+                    <animate id="animate-attack-bar" attributeName="width" from="0" to="140" dur="0.8s" fill="freeze" />
                 </rect>
 
                 <!-- DEFESA (mais contraste) -->
-                <text x="64" y="412" font-size="11" fill="#e0f2f1">DEF</text>
+                <text id="def" x="64" y="412" font-size="11" fill="#e0f2f1">DEF</text>
                 <rect x="90" y="404" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="defense-bar" x="90" y="404" width="160" height="10" rx="5" fill="#42a5f5">
-                    <animate attributeName="width" from="0" to="160" dur="0.8s" fill="freeze" />
+                    <animate id="animate-defense-bar" attributeName="width" from="0" to="160" dur="0.8s"
+                        fill="freeze" />
                 </rect>
 
                 <!-- =============== CONTROLES =============== -->
