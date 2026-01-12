@@ -144,7 +144,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     align-items: start;
-
+    margin-top: 30px;
 
     max-height: calc(100vh - 280px);
     overflow-y: auto;
