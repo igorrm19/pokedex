@@ -53,6 +53,7 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden;
 }
 
 .main {
@@ -133,6 +134,29 @@ body {
     width: 150px;
     border: none;
 }
+
+#lista-todos-pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    padding: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+
+    max-height: calc(100vh - 280px);
+    overflow-y: auto;
+}
+
+
+#lista-todos-pokemons svg {
+    width: 100%;
+    max-width: 360px;
+    justify-self: center;
+}
+
+
 
 @media (min-width: 768px) {
     .view {
