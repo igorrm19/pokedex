@@ -3,7 +3,13 @@
 
 Pokedex contruida com manipulação de svg n dom, consumo de api 
 
+
+
+##
+
 --> API Utilizada: https://pokeapi.co/
+
+##
 
 
 Nas primeiras seções é permitido interagir com o svg;
