@@ -15,13 +15,14 @@
             <h3>Pokedex</h3>
             <form action="">
                 <input type="text" id="search-input" placeholder="Procurar Pokemon...">
-                <button id="search-button">
+                <input style="display: none;" type="text" id="search-input-2" placeholder="Procurar Pokemon...">
+                <!-- <button id="search-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                     </svg>
-                </button>
+                </button> -->
             </form>
         </section>
         <section class="pokedex" id="pokedex">
@@ -97,21 +98,22 @@
                 <text x="64" y="372" font-size="11" fill="#e0f2f1">HP</text>
                 <rect x="90" y="364" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="hp-bar" x="90" y="364" width="120" height="10" rx="5" fill="#4caf50">
-                    <animate attributeName="width" from="0" to="120" dur="0.8s" fill="freeze" />
+                    <animate id="animate-hp-bar" attributeName="width" from="0" to="120" dur="0.8s" fill="freeze" />
                 </rect>
 
                 <!-- ATAQUE -->
                 <text x="64" y="392" font-size="11" fill="#e0f2f1">ATK</text>
                 <rect x="90" y="384" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="attack-bar" x="90" y="384" width="140" height="10" rx="5" fill="#ff7043">
-                    <animate attributeName="width" from="0" to="140" dur="0.8s" fill="freeze" />
+                    <animate id="animate-attack-bar" attributeName="width" from="0" to="140" dur="0.8s" fill="freeze" />
                 </rect>
 
                 <!-- DEFESA (mais contraste) -->
-                <text x="64" y="412" font-size="11" fill="#e0f2f1">DEF</text>
+                <text id="def" x="64" y="412" font-size="11" fill="#e0f2f1">DEF</text>
                 <rect x="90" y="404" width="200" height="10" rx="5" fill="#37474f" />
                 <rect id="defense-bar" x="90" y="404" width="160" height="10" rx="5" fill="#42a5f5">
-                    <animate attributeName="width" from="0" to="160" dur="0.8s" fill="freeze" />
+                    <animate id="animate-defense-bar" attributeName="width" from="0" to="160" dur="0.8s"
+                        fill="freeze" />
                 </rect>
 
                 <!-- =============== CONTROLES =============== -->
@@ -128,9 +130,13 @@
             </svg>
         </section>
 
+        <div id="lista-todos-pokemons"></div>
+
+
         <section class="view">
             <button class="ver-todos" id="ver-todos">Ver todos</button>
         </section>
+
     </main>
 
 
